@@ -1,9 +1,6 @@
 
 /* Temporary styles */
-.banner{
-    position: absolute;
-    bottom: 0;
-    margin: auto;
-    left: 0;
-    right: 0;
+.about{
+    background-color: ##FF0000;
+    padding: 0, 0, 0, 0;
 }
