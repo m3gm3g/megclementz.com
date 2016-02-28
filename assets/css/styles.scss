@@ -1,0 +1,108 @@
+$white: #fff;
+$about: #00CABA;
+$work: #00E491;
+
+
+h1, h2, h3, p {
+    font-family: 'Open Sans', sans-serif;
+}
+
+ul > li > a {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 800;
+    color: $white;
+    font-size: 1em;
+    text-transform: uppercase;
+}
+
+h1 {
+    font-weight: 800;
+}
+
+h3 {
+    font-weight: 800;
+}
+
+p {
+    font-weight: 400;
+}
+
+h1[class='about'] {
+    color: $about;
+    text-transform: uppercase;
+    font-size: 1em;
+    padding-top: 49px;
+}
+
+h3[class='about'] {
+    color: $about;
+}
+
+p[class='about'] {
+    color: $about;
+}
+
+h3[class='work'] {
+    color: $work;
+}
+
+p[class='work'] {
+    color: $work;
+}
+
+h1[class='work'] {
+    color: $work;
+    text-transform: uppercase;
+    font-size: 1em;
+    padding-top: 49px;
+}
+
+.header {
+    background-color: $about;
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+.conatiner{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#about {
+    height: 398px;
+    position: relative;
+}
+
+#logo {
+    width: 100%;
+}
+
+#logodiv{
+    height: 6px;
+}
+
+#lineOne{
+    height: 5px;
+    width: 60px;
+}
+
+#lineTwo{
+    height: 5px;
+    width: 60px;
+}
+
+#headerImage {
+    display: block;
+    margin: 0 auto;
+    padding-top: 20px;
+}
+
+#aboutImage {
+    display: block;
+    margin: 0 auto;
+    padding-top: 49px;
+}
+
+#workDots {
+    padding-top: 10px;
+}

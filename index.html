@@ -17,6 +17,8 @@
     <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css">
+    <!-- Hover CSS -->
+    <link rel="stylesheet" href="assets/css/hover.min.css">
 </head>
 
 <body>
@@ -55,10 +57,12 @@
     <div class="container-fluid" id="work">
         <div class="row">
             <div class="col-md-6">
-                <div class="your-class">
+                <div id="workSlider">
                     <div><img src="http://guidesmedia.ign.com/guides/059687/images/blackwhite/pokemans_001.gif" alt="Pikachu" /></div>
                     <div><img src="http://guidesmedia.ign.com/guides/059687/images/blackwhite/pokemans_004.gif" alt="Charmander" /></div>
                     <div><img src="http://guidesmedia.ign.com/guides/059687/images/blackwhite/pokemans_007.gif" alt="Squirtle" /></div>
+                    <div><img src="http://guidesmedia.ign.com/guides/059687/images/blackwhite/pokemans_025.gif" alt="Squirtle" /></div>
+                    <div><img src="http://guidesmedia.ign.com/guides/059687/images/blackwhite/pokemans_132.gif" alt="Squirtle" /></div>
                 </div>
             </div><!--colr-md-6-->
 
@@ -67,12 +71,12 @@
                 <img id="lineTwo" src="assets/images/lineTwo.svg">
                 <h3 class="work">Bringing Clarity to Complexity.<br>Professional Derp.</h3>
                 <p class="work">Gumbo beet greens corn soko endive gumbo gourd. Parsley shallot courgette tatsoi pea sprouts fava bean collard greens dandelion okra wakame tomato. Dandelion cucumber earthnut pea peanut soko zucchini.</p>
-                <p class="work">
-                    <i class="fa fa-circle"></i>&nbsp;&nbsp;&nbsp;&nbsp;
-                    <i class="fa fa-circle-o"></i>&nbsp;&nbsp;&nbsp;&nbsp;
-                    <i class="fa fa-circle-o"></i>&nbsp;&nbsp;&nbsp;&nbsp;
-                    <i class="fa fa-circle-o"></i>&nbsp;&nbsp;&nbsp;&nbsp;
-                    <i class="fa fa-circle-o"></i>
+                <p class="work" id="workDots">
+                    <i id="dotOne" class="fa fa-circle hvr-grow"></i>&nbsp;&nbsp;&nbsp;&nbsp;
+                    <i id="dotTwo" class="fa fa-circle-o hvr-grow"></i>&nbsp;&nbsp;&nbsp;&nbsp;
+                    <i id="dotThree" class="fa fa-circle-o hvr-grow"></i>&nbsp;&nbsp;&nbsp;&nbsp;
+                    <i id="dotFour" class="fa fa-circle-o hvr-grow"></i>&nbsp;&nbsp;&nbsp;&nbsp;
+                    <i id="dotFive" class="fa fa-circle-o hvr-grow"></i>
                 </p>
             </div><!--colr-md-6-->
         </div>
@@ -98,13 +102,122 @@
     <script type="text/javascript" src="slick/slick.min.js"></script>
     <script>
     $(document).ready(function(){
-        $('.your-class').slick({
-            dots: true,
-            infinite: true,
+        $("#workSlider").slick({
+            dots: false,
+            infinite: false,
             speed: 500,
             fade: true,
-            cssEase: 'linear'
+            cssEase: 'linear',
+            accessibility: false,
+            autoplay: false,
+            arrows: false,
+            draggable: false,
+            swipe: false,
+            touchMove: false,
         });
+
+        var filled = "fa-circle";
+        var notfilled = "fa-circle-o";
+
+        function clearDots() {
+            if ( $("#dotOne").hasClass(filled) == true ) {
+                $("#dotOne").removeClass(filled);
+                $("#dotOne").addClass(notfilled);
+            }
+            if ( $("#dotTwo").hasClass(filled) == true ) {
+                $("#dotTwo").removeClass(filled);
+                $("#dotTwo").addClass(notfilled);
+            }
+            if ( $("#dotThree").hasClass(filled) == true ) {
+                $("#dotThree").removeClass(filled);
+                $("#dotThree").addClass(notfilled);
+            }
+            if ( $("#dotFour").hasClass(filled) == true ) {
+                $("#dotFour").removeClass(filled);
+                $("#dotFour").addClass(notfilled);
+            }
+            if ( $("#dotFive").hasClass(filled) == true ) {
+                $("#dotFive").removeClass(filled);
+                $("#dotFive").addClass(notfilled);
+            }
+        }
+
+
+        $("#dotOne").click(function() {
+            $("#workSlider").slick("slickGoTo", 0);
+            clearDots();
+            $(this).addClass("fa-circle");
+        });
+
+        $("#dotTwo").click(function() {
+            $("#workSlider").slick("slickGoTo", 1);
+            clearDots();
+            $(this).addClass("fa-circle");
+        });
+
+        $("#dotThree").click(function() {
+            $("#workSlider").slick("slickGoTo", 2);
+            clearDots();
+            $(this).addClass("fa-circle");
+        });
+
+        $("#dotFour").click(function() {
+            $("#workSlider").slick("slickGoTo", 3);
+            clearDots();
+            $(this).addClass("fa-circle");
+        });
+
+        $("#dotFive").click(function() {
+            $("#workSlider").slick("slickGoTo", 4);
+            clearDots();
+            $(this).addClass("fa-circle");
+        });
+
+
+
+        //On hover, show fa fa-circle
+
+        // $( "#dotOne" ).hover(
+        //   function() {
+        //     $( this ).addClass( "hvr-grow" );
+        //   }, function() {
+        //     $( this ).removeClass( "hvr-grow" );
+        //   }
+        // );
+        //
+        // $( "#dotTwo" ).hover(
+        //   function() {
+        //     $( this ).addClass( "hvr-grow" );
+        //   }, function() {
+        //     $( this ).removeClass( "hvr-grow" );
+        //   }
+        // );
+        //
+        // $( "#dotThree" ).hover(
+        //   function() {
+        //     $( this ).addClass( "hvr-grow" );
+        //   }, function() {
+        //     $( this ).removeClass( "hvr-grow" );
+        //   }
+        // );
+        //
+        // $( "#dotFour" ).hover(
+        //   function() {
+        //     $( this ).addClass( "hvr-grow" );
+        //   }, function() {
+        //     $( this ).removeClass( "hvr-grow" );
+        //   }
+        // );
+        //
+        // $( "#dotFive" ).hover(
+        //   function() {
+        //     $( this ).addClass( "hvr-grow" );
+        //   }, function() {
+        //     $( this ).removeClass( "hvr-grow" );
+        //   }
+        // );
+
+
     });
     </script>
 
